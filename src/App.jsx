@@ -5,7 +5,7 @@ function App() {
     <div className="call container grid">
       <h1 className="uppercase">Design system</h1>
       <section id="colors" style={{ margin: "2rem 0" }}>
-        <h2 className="uppercase">
+        <h2 className="numbered-title">
           <span>01</span> colors
         </h2>
         <div className="flex">
@@ -54,11 +54,11 @@ function App() {
         </div>
       </section>
       <section id="typography" style={{ margin: "4rem 0" }}>
-        <h2>
+        <h2 className="numbered-title">
           <span>02 </span>Typography
         </h2>
         <div className="flex">
-          <div style={{ flexBasis: "100%" }}>
+          <div className="flow" style={{ flexBasis: "100%"}}>
             <div>
               <p className="text-accent">
                 Heading 1 - Bellefair Regular - 150px
@@ -95,7 +95,7 @@ function App() {
               </p>
             </div>
           </div>
-          <div style={{ flexBasis: "100%" }}>
+          <div className="flow" style={{ flexBasis: "100%" }}>
             <div>
               <p className="text-accent">
                 Subheading 1 - Bellefair Regular - 28px
@@ -140,6 +140,17 @@ function App() {
             </div>
           </div>
         </div>
+      </section>
+      <section>
+      <h2 className="numbered-title"><span>03</span> Interactive elements</h2>
+
+                <div></div>
+                <div className="flex">
+                  <div style={{ marginTop: "5rem" }}>
+                    <a className="large-button uppercase ff-serif fs-600 text-dark bg-white">Explore</a>
+                  </div>
+                  <div style={{ marginBottom: "90vh" }}></div>
+                </div>
       </section>
     </div>
   );
