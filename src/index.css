@@ -247,3 +247,44 @@ select {
   opacity: 1;
   transform: scale(1.5);
 }
+.primery{
+  gap: 8rem;
+  list-style: none;
+  padding: 1rem 0;
+}
+.primery a{
+  text-decoration: none;
+}
+.primery a>span{
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+.underline>*{
+  cursor: pointer;
+  padding: 1rem 0;
+  border: 0;
+  border-bottom: 0.2rem solid hsl( var(--clr-white)/0);
+}
+.underline>*:hover,.underline>*:focus{
+  border-color: hsl( var(--clr-white) / 0.5);
+}
+.underline>.active , .underline>[aria-selected="true"] , .dat-indic>.active{
+  color: hsl( var(--clr-white) / 1);
+  border-color: hsl( var(--clr-white) / 1);
+}
+.tabs-list{
+  gap: 2rem;
+}
+.dat-indic >*{
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  padding: 0.5em;
+  background-color: hsl( var(--clr-white) / .25)
+}
+.dat-indic >*:hover , .dat-indic >*:hover{
+  background-color: hsl( var(--clr-white) / .5)
+}
+.dat-indic>.active{
+  border-color: hsl( var(--clr-white) / 1);
+}

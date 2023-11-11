@@ -58,7 +58,7 @@ function App() {
           <span>02 </span>Typography
         </h2>
         <div className="flex">
-          <div className="flow" style={{ flexBasis: "100%"}}>
+          <div className="flow" style={{ flexBasis: "100%" }}>
             <div>
               <p className="text-accent">
                 Heading 1 - Bellefair Regular - 150px
@@ -142,15 +142,55 @@ function App() {
         </div>
       </section>
       <section>
-      <h2 className="numbered-title"><span>03</span> Interactive elements</h2>
+        <h2 className="numbered-title">
+          <span>03</span> Interactive elements
+        </h2>
 
-                <div></div>
-                <div className="flex">
-                  <div style={{ marginTop: "5rem" }}>
-                    <a className="large-button uppercase ff-serif fs-600 text-dark bg-white">Explore</a>
-                  </div>
-                  <div style={{ marginBottom: "90vh" }}></div>
-                </div>
+        {/* navigation */}
+        <div>
+          <nav>
+            <ul className="primery flex underline">
+              <li className="active">
+                <a className="uppercase text-white letter-spacing-2" href="#">
+                  <span>01</span>Active
+                </a>
+              </li>
+              <li>
+                <a className="uppercase text-white letter-spacing-2" href="#">
+                  <span>02</span>Hovered
+                </a>
+              </li>
+              <li>
+                <a className="uppercase text-white letter-spacing-2" href="#">
+                  <span>03</span>Idle
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div className="flex">
+          <div style={{ marginTop: "5rem" }}>
+            {/* explore button */}
+            <a className="large-button uppercase ff-serif fs-600 text-dark bg-white">
+              Explore
+            </a>
+          </div>
+          <div className="flow" style={{ marginBottom: "90vh" }}>
+            {/* Tabs */}
+            <div className="tabs-list flex underline">
+              <button aria-selected='true' className="uppercase text-accent bg-dark letter-spacing-2 ff-sans-cond">Moon</button>
+              <button aria-selected='false' className="uppercase text-accent bg-dark letter-spacing-2 ff-sans-cond">Mars</button>
+              <button aria-selected='false' className="uppercase text-accent bg-dark letter-spacing-2 ff-sans-cond">Europa</button>
+            </div>
+            {/* Dats */}
+            <div className="dat-indic flex">
+              <button className="active" aria-selected="true"><span className="sr-only">Slide titel</span></button>
+              <button aria-selected="false"><span className="sr-only">Slide titel</span></button>
+              <button aria-selected="false"><span className="sr-only">Slide titel</span></button>
+            </div>
+          </div>
+
+        </div>
       </section>
     </div>
   );
