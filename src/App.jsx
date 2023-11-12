@@ -175,7 +175,7 @@ function App() {
               Explore
             </a>
           </div>
-          <div className="flow" style={{ marginBottom: "90vh" }}>
+          <div className="flow" style={{ marginBottom: "90vh", marginTop:"var(--flow-space, 4rem)"}}>
             {/* Tabs */}
             <div className="tabs-list flex underline">
               <button aria-selected='true' className="uppercase text-accent bg-dark letter-spacing-2 ff-sans-cond">Moon</button>
@@ -184,10 +184,16 @@ function App() {
             </div>
             {/* Dats */}
             <div className="dat-indic flex">
-              <button className="active" aria-selected="true"><span className="sr-only">Slide titel</span></button>
+              <button aria-selected="true"><span className="sr-only">Slide titel</span></button>
               <button aria-selected="false"><span className="sr-only">Slide titel</span></button>
               <button aria-selected="false"><span className="sr-only">Slide titel</span></button>
             </div>
+             {/* Numbers */}
+             <div className="number flow" style={{ marginTop:"var(--flow-space, 8rem)"}}>
+              <button aria-selected='true'>1</button>
+              <button>2</button>
+              <button>3</button>
+             </div>
           </div>
 
         </div>
