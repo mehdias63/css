@@ -1,7 +1,10 @@
 import React from "react";
+import Header from "./components/Header";
 
 function App() {
   return (
+    <div>
+    <Header />
     <div className="call container grid">
       <h1 className="uppercase">Design system</h1>
       <section id="colors" style={{ margin: "2rem 0" }}>
@@ -198,6 +201,7 @@ function App() {
 
         </div>
       </section>
+    </div>
     </div>
   );
 }
