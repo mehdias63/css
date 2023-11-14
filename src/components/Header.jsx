@@ -1,4 +1,5 @@
 import React from "react";
+import Index from "../index";
 
 export default function Header() {
   return (
@@ -7,9 +8,9 @@ export default function Header() {
         <div>
           <img src="../assets/shared/logo.svg" />
         </div>
-
+        <button className="mobile-nav" aria-controls="primery" ><span className="sr-only" aria-expanded="false">Menu</span></button>
         <nav>
-          <ul className="primery flex underline">
+          <ul id="primery" data-visible="false" className="primery flex underline">
             <li className="active">
               <a
                 className="ff-sans-cond uppercase text-white letter-spacing-2"

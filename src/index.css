@@ -84,6 +84,7 @@ body {
   background-color: hsl(var(--clr-dark));
   line-height: 1.5;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 img,
@@ -298,9 +299,44 @@ select {
   transform: scale(1.5);
 }
 .primery {
-  gap: 8rem;
+  gap: 2rem;
   list-style: none;
-  padding: 1rem 0;
+  padding: 0;
+  margin: 0;
+  background: hsl( var(--clr-white) / 0.05);
+  backdrop-filter: blur(1.5rem);
+}
+.mobile-nav{
+  display: none;
+}
+@media (max-width: 35rem){
+  .primery{
+    gap: 0.5rem;
+    position: fixed;
+    z-index: 1000;
+    flex-direction: column;
+    inset: 0 0 0 30%;
+    padding: min(20rem, 15vh) 2rem;
+  }
+  .primary[data-visible="true"] {
+    transform: translateX(0);
+}
+  .mobile-nav{
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+    z-index: 2000;
+    background: transparent;
+    background-image: url(../assets/shared/icon-hamburger.svg);
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    border: 0;
+  }
+  .primery.underline>.active{
+    border: 0;
+  }
 }
 .primery a {
   text-decoration: none;
