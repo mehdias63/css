@@ -306,9 +306,10 @@ select {
   background: hsl( var(--clr-white) / 0.05);
   backdrop-filter: blur(1.5rem);
 }
-.mobile-nav{
+div.home>header>label,div.home>header>input{
   display: none;
 }
+
 @media (max-width: 35rem){
   .primery{
     gap: 0.5rem;
@@ -318,8 +319,11 @@ select {
     inset: 0 0 0 30%;
     padding: min(20rem, 15vh) 2rem;
   }
-  .primary[data-visible="true"] {
-    transform: translateX(0);
+  div.home>header>label{
+    display: block;
+  }
+#hamburger-menu:checked ~ nav {
+  display: none;
 }
   .mobile-nav{
     display: block;
