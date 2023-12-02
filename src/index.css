@@ -176,6 +176,19 @@ select {
   white-space: nowrap; /* added line */
   border: 0;
 }
+.skip-to-content {
+  position: absolute;
+  z-index: 9999;
+  background: hsl( var(--clr-white) );
+  color: hsl( var(--clr-dark) );
+  padding: .5em 1em;
+  margin-inline: auto;
+  transform: translateY(-100%);
+  transition: transform 250ms ease-in;
+}
+.skip-to-content:focus {
+  transform: translateY(0);
+}
 
 /*  color  */
 .bg-dark {
@@ -269,6 +282,9 @@ select {
 /* ------------------- */
 /*     Compontents     */
 /* ------------------- */
+button{
+  display: none;
+}
 
 .large-button {
   font-size: 2rem;
@@ -298,16 +314,28 @@ select {
   opacity: 1;
   transform: scale(1.5);
 }
+/* primary-header */
+.logo {
+  margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+}
+.primary-header {
+  justify-content: space-between;
+  align-items: center;
+}
 .primery {
-  gap: 2rem;
+  gap: clamp(1.5rem, 5vw, 3.5rem);
   list-style: none;
   padding: 0;
   margin: 0;
   background: hsl( var(--clr-white) / 0.05);
   backdrop-filter: blur(1.5rem);
 }
-div.home>header>label,div.home>header>input{
-  display: none;
+.primery a {
+  text-decoration: none;
+}
+.primery a > span {
+  font-weight: bold;
+  margin-right: 0.5em;
 }
 
 @media (max-width: 35rem){
@@ -318,13 +346,14 @@ div.home>header>label,div.home>header>input{
     flex-direction: column;
     inset: 0 0 0 30%;
     padding: min(20rem, 15vh) 2rem;
+    margin: 0;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 500ms ease-in-out;
   }
-  div.home>header>label{
-    display: block;
+  .primery.open{
+    transform: translateX(0);
   }
-#hamburger-menu:checked ~ nav {
-  display: none;
-}
   .mobile-nav{
     display: block;
     position: absolute;
@@ -338,16 +367,37 @@ div.home>header>label,div.home>header>input{
     aspect-ratio: 1;
     border: 0;
   }
+  .mobile-nav.open{
+    background-image: url(../assets/shared/icon-close.svg);
+  }
   .primery.underline>.active{
     border: 0;
   }
 }
-.primery a {
-  text-decoration: none;
+@media (min-width: 35em){
+  .primery{
+    padding-inline: clamp(3rem, 7vw, 7rem);
+  }
 }
-.primery a > span {
-  font-weight: bold;
-  margin-right: 0.5em;
+@media (min-width: 35em) and (max-width: 44.999em){
+  .primery a > span{
+    display: none;
+  }
+}
+@media (min-width: 45em){
+  .primary-header::after {
+    content: '';
+    display: block;
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin-right: -2.5rem;
+    background: hsl( var(--clr-white) / .25);
+    order: 1;
+}
+nav{
+  order: 2;
+}
 }
 .underline > * {
   cursor: pointer;

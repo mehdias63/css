@@ -1,23 +1,29 @@
-import React from "react";
+import {useState} from "react";
 
 
 export default function Header() {
+  const[mobileOpen,setMobileOpen] =useState(false)
   return (
     <div className="home">
-      <header className="flex">
+      <a className="skip-to-content" href="#main">Skip to content</a>
+      <header className="primary-header flex">
         <div>
-          <img src="../assets/shared/logo.svg" />
+          <img className="logo" src="../assets/shared/logo.svg" />
         </div>
-        <label htmlFor="hamburger-menu" className="mobile-nav"  aria-controls="primery"><span className="sr-only" aria-expanded="false">Menu</span></label>
-        <input type="checkbox" id="hamburger-menu" />
+        <button className={`mobile-nav ${mobileOpen ? "open" : ""}`} 
+        aria-controls="primery"
+        onClick={()=> setMobileOpen((preMobileOpen) => !preMobileOpen ) }>
+        <span className="sr-only" aria-expanded="false">Menu</span>
+        </button>
+        
         <nav>
-          <ul id="primery" data-visible="false" className="primery flex underline" >
+          <ul id="primery" data-visible="false" className={`primery flex underline ${mobileOpen ? "open" : ""}`} >
             <li className="active">
               <a
                 className="ff-sans-cond uppercase text-white letter-spacing-2"
                 href="#"
               >
-                <span>00</span>Home
+                <span aria-hidden="true">00</span>Home
               </a>
             </li>
             <li>
@@ -25,7 +31,7 @@ export default function Header() {
                 className="ff-sans-cond uppercase text-white letter-spacing-2"
                 href="#"
               >
-                <span>01</span>Destination
+                <span aria-hidden="true">01</span>Destination
               </a>
             </li>
             <li>
@@ -33,7 +39,7 @@ export default function Header() {
                 className="ff-sans-cond uppercase text-white letter-spacing-2"
                 href="#"
               >
-                <span>02</span>Crew
+                <span aria-hidden="true">02</span>Crew
               </a>
             </li>
             <li>
@@ -41,13 +47,13 @@ export default function Header() {
                 className="ff-sans-cond uppercase text-white letter-spacing-2"
                 href="#"
               >
-                <span>03</span>Technology
+                <span aria-hidden="true">03</span>Technology
               </a>
             </li>
           </ul>
         </nav>
       </header>
-      <div className="grid-container grid-container--home">
+      <main className="grid-container grid-container--home" id="main">
         <div>
           <h1 className="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
             So, you want to travel to
@@ -65,7 +71,7 @@ export default function Header() {
             Explore
           </a>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
